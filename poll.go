@@ -1,14 +1,16 @@
 package main
 
 import (
-	"net/http"
 	"encoding/base64"
 	"encoding/json"
-	"os"
-	"io"
-	"strings"
 	"fmt"
+	"io"
+	"net/http"
+	"os"
+	"strconv"
+	"strings"
 	"time"
+
 	_ "github.com/influxdata/influxdb1-client"
 	influxc "github.com/influxdata/influxdb1-client/v2"
 )
