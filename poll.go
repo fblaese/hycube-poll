@@ -111,8 +111,8 @@ func getData() (map[string]interface{}, error) {
 
 	// merge missing values into data map
 	data["Battery_C"] = rawdata["258"]
-	data["Wallbox_P"] = wallboxStats["currentPower"]
-	data["Wallbox_E"] = wallboxStats["totalEnergy"]
+	data["Wallbox_P"], _ = strconv.ParseFloat(wallboxStats["currentPower"].(string), 64);
+	data["Wallbox_E"], _ = strconv.ParseFloat(wallboxStats["totalEnergy"].(string), 64);
 	data["Wallbox_Connected"] = wallboxState["wallboxConnextion"]
 
 	return data, nil
